@@ -1,0 +1,7 @@
+<h1>CHEF</h1>
+<h2><%= @restaurant.chef_name %></h2>
+<% if @restaurant.stars = 5 %>
+  <%= link_to "retour", top_restaurants_path %>
+<% else %>
+  <%= link_to "retour", restaurants_path %>
+<% end %>

@@ -2,9 +2,13 @@
 <h2><%= @restaurant.name %></h2>
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.stars %></p>
+<h3><%= link_to "chef", chef_name_restaurant_path(@restaurant)%></h3>
 <% if @restaurant.stars = 5 %>
   <%= link_to "retour", top_restaurants_path %>
 <% else %>
   <%= link_to "retour", restaurants_path %>
 <% end %>
+
+
+
 

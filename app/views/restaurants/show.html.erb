@@ -1,0 +1,10 @@
+<h1>ONE RESTAURANT</h1>
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.stars %></p>
+<% if @restaurant.stars = 5 %>
+  <%= link_to "retour", top_restaurants_path %>
+<% else %>
+  <%= link_to "retour", restaurants_path %>
+<% end %>
+

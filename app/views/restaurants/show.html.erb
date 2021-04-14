@@ -3,15 +3,24 @@
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.stars %></p>
 <h3><%= link_to "chef", chef_name_restaurant_path(@restaurant)%></h3>
-<p><%= link_to "laisser un com", new_review_path %></p>
+<p><%= link_to "laisser un com", new_restaurant_review_path(@restaurant) %></p>
 <br>
-
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+  <li>
+    <%= review.content %>
+    <%= link_to "supprimer", review, method: :delete, data: { confirm: "are you sure?"} %>
+  </li>
+  <% end %>
+</ul>
 
 <% if @restaurant.stars = 5 %>
   <%= link_to "retour", top_restaurants_path %>
 <% else %>
   <%= link_to "retour", restaurants_path %>
 <% end %>
+
+
 
 
 
